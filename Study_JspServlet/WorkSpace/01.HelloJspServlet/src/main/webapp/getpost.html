@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1> GET과 POST 요청 해보기</h1>
+	<!-- text값을 요청할수있는 폼태그 하나 만들고 요청해보기. (Submit) -->
+	<form action="Ex03_GetPost" method="get"><!-- action :  -->
+	 	<input type="text" name="txt1" id="txt2" ><!-- name vs id -->
+	 	<input type="text" name="txt2" id="txt2" ><!-- name vs id -->
+	 	<input type="submit">
+	</form>
+	<form action="Ex03_GetPost" method="post"><!-- action :  -->
+	 	<input type="text" name="txt1" id="txt2" ><!-- name vs id -->
+	 	<input type="text" name="txt2" id="txt2" ><!-- name vs id -->
+	 	<input type="submit">
+	</form>
+	
+	<!-- a태그로 Ex03_GetPost요청해보기 
+	a태그로 Ex03_GetPost 요청하면서 txt1이라는 변수에 값 1234를 보내보기.-->
+	<a href="Ex03_GetPost?txt1=1234">요청</a>
+	<!-- a태그로 naver 창 띄워보기 -->
+	
+	
+</body>
+</html>
