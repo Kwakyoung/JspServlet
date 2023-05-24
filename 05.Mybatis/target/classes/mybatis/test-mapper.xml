@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kyg">
+
+  <select id="dual" resultType="Integer">
+    select 1 from dual
+  </select>
+  <!-- private String field1;
+	private int field2; -->
+	
+  <select id="voselect" resultType="kyg.KygVO">
+  	select 'dbfield1' field1 , 999 field2 from dual
+  </select>
+  
+  <select id="listselect" resultType="kyg.KygVO">
+  	select 'dbfield1' field1 , 999 field2 from dual 
+  	union  <!-- 합집합. -->
+  	select 'dbfield2' field1 , 000 field2 from dual 
+  </select>
+  
+  <select id="selectwhere1" resultType="String">
+   	SELECT name
+	FROM    CUSTOMER
+	WHERE   ID = #{raaa}   <!-- String => #{}  -->
+  </select>
+  
+  <select id="selectwhere2" resultType="customer.CustomerVO">
+  	SELECT * FROM customer
+  	WHERE ID = #{id} AND NAME = #{name}
+  </select>
+  
+  <select id="selectwhere3" resultType="customer.CustomerVO">
+  		SELECT * FROM customer
+  		WHERE ID BETWEEN 2 AND 4
+  </select>
+  <select id="mapselect" resultType="String">
+  	SELECT  *
+  	FROM	KOREA_PEOPLE
+  	WHERE NAME = #{name}
+  	AND JUMIN_NUM = #{num}
+  </select>
+</mapper>

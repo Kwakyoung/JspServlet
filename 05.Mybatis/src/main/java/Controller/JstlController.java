@@ -17,6 +17,7 @@ public class JstlController extends HttpServlet {
 	// 기존에 doGet , doPost <= Spring에서는 default로 두가지가 합쳐진 버전의 메소드를 활용한다.
 	// service ( get , post 의 모든 요청을 받는 메소드 )
 	RequestDispatcher rd; // < 전역변수로 선언해줌
+
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(req.getServletPath());

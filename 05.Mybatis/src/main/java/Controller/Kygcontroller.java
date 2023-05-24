@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kyg.KygVO;
+import oracle.jdbc.driver.OracleDriver;
 
 @WebServlet("*.kyg")
 public class Kygcontroller extends HttpServlet {
@@ -22,14 +23,13 @@ public class Kygcontroller extends HttpServlet {
 		System.out.println(req.getServletPath());
 		if(req.getServletPath().equals("/list.kyg")) {
 			rd = req.getRequestDispatcher("kyg/list.jsp");
-			
 			ArrayList<KygVO> list = new ArrayList<>();
 			// <> <- Object를 상속받은 Class 타입만 넣을수있음.
 			for(int i=0; i<10; i++) {
-			KygVO vo = new KygVO();
-			vo.setField1("필드1"+i);
-			vo.setField2(10+i);
-			list.add(vo);
+//			KygVO vo = new KygVO();
+//			vo.setField1("필드1"+i);
+//			vo.setField2(10+i);
+//			list.add(vo);
 			}
 			req.setAttribute("list", list);
 			
