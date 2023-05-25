@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cu">
+<!-- select의 결과를 받기위해서 타입 지정 필수
+	 update , insert , delete는 숫자형태로 성공여부가 나오니 ,resultType 없어도됨  -->
+	<select id="list" resultType="customer.CustomerVO">
+		SELECT * FROM CUSTOMER  
+	</select>
+	<select id="detail" resultType="customer.CustomerVO">
+		SELECT * FROM CUSTOMER WHERE ID = #{id}
+	</select>
+	
+	<update id="update">
+		update customer set email = #{email}, phone =#{phone}
+		where id = #{id}
+	</update>
+	
+	<insert id="insert">
+		INSERT INTO CUSTOMER (id,name,email,phone)
+		VALUES (#{id}, #{name}, #{email}, #{phone})
+	</insert>
+</mapper>

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kyg.KygVO;
-import oracle.jdbc.driver.OracleDriver;
 
 @WebServlet("*.kyg")
 public class Kygcontroller extends HttpServlet {
